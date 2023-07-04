@@ -5,14 +5,26 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <title>Яндекс.Дом</title>
+    <link rel="prefetch" href="assets/bg.png" as="image"/>
     <link rel="preload" as="font" href="assets/lato.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="prefetch" href="assets/logo.svg" as="image"/>
+    <link rel="prefetch" href="assets/cloud-drizzle.svg" as="image"/>
+    <link rel="prefetch" href="assets/icon_temperature.svg" as="image"/>
+    <link rel="prefetch" href="assets/icon_sun.svg" as="image"/>
+    <link rel="prefetch" href="assets/icon_sun_2.svg" as="image"/>
+    <link rel="prefetch" href="assets/icon_scheduled.svg" as="image"/>
+    <link rel="prefetch" href="assets/icon_temperature_2.svg" as="image"/>
+    <link rel="prefetch" href="assets/arrow-left.png" as="image"/>
     <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-<!--    <script src="vendors/react-with-dom.js"></script>-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!--    <script src="vendors/react-with-dom.js"></script>-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
 
 <div id="app"></div>
@@ -39,7 +51,21 @@
 </footer>
 
 <!--<script src="vendors/babel.min.js"></script>-->
-<script>function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+<script>function _extends() {
+    _extends = Object.assign ? Object.assign.bind() : function (target) {
+        for (var i = 1; i < arguments.length; i++) {
+            var source = arguments[i];
+            for (var key in source) {
+                if (Object.prototype.hasOwnProperty.call(source, key)) {
+                    target[key] = source[key];
+                }
+            }
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
+}
+
 function Header() {
     let [expanded, setExpanded] = React.useState(false);
     let [toggled, setToggled] = React.useState(false);
@@ -81,6 +107,7 @@ function Header() {
         href: "/scripts"
     }, "\u0421\u0446\u0435\u043D\u0430\u0440\u0438\u0438"))));
 }
+
 function Event(props) {
     const ref = React.useRef();
     const {
@@ -111,6 +138,7 @@ function Event(props) {
         className: "event__subtitle"
     }, props.subtitle)));
 }
+
 const TABS = {
     all: {
         title: 'Все',
@@ -222,6 +250,7 @@ for (let i = 0; i < 6; ++i) {
     TABS.all.items = [...TABS.all.items, ...TABS.all.items];
 }
 const TABS_KEYS = Object.keys(TABS);
+
 function Main() {
     const ref = React.useRef();
     const initedRef = React.useRef(false);
@@ -388,6 +417,7 @@ function Main() {
         onClick: onArrowCLick
     }))));
 }
+
 setTimeout(() => {
     const root = ReactDOM.createRoot(document.getElementById('app'));
     root.render( /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Header, null), /*#__PURE__*/React.createElement(Main, null)));
